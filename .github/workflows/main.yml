@@ -4,17 +4,18 @@ on: [push]
 
 jobs:
   run-shell-command:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # vm version
     steps:
       - name: echo a string
         run: echo "Hello World"
       - name: multiline script
-        run: |
+        run: | # pipe sign allow to run multiple line scripts 
           node -v
           npm -v
           
   run-shell-windows:
     runs-on: windows-latest
+    needs: ["run-shell-command"] # instead of running in parallel this job waits till the other finishes. 
     steps:
       - name: Current directory
         run: pwd
