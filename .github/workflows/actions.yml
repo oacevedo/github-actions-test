@@ -2,7 +2,8 @@ name: Simple Action
 
 on: 
   repository_dispatch: 
-    type: [this-is-a-test]
+    types: [this-is-a-test]
+    
 jobs:
   run-javascript-action:
     runs-on: ubuntu-latest
