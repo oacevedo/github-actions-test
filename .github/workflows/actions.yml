@@ -3,7 +3,8 @@ name: Simple Action
 on: 
   repository_dispatch: 
     types: [this-is-a-test]
-    
+  schedule:
+    - cron: "*/2 * * * *" # every even minute
 jobs:
   run-javascript-action:
     runs-on: ubuntu-latest
