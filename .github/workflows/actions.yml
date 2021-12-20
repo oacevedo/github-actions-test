@@ -1,8 +1,8 @@
 name: Simple Action
 
 on: 
-  repository_dispatch: 
-    types: [this-is-a-test]
+  # repository_dispatch: 
+  #   types: [this-is-a-test]
   schedule:
     - cron: "*/2 * * * *" # every even minute
 jobs:
