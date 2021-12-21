@@ -1,0 +1,27 @@
+name: Testing env vars
+
+on: 
+  - push
+
+jobs:
+  Checkout:
+    runs-on: windows-latest
+    steps:  
+      - name: checkout
+        uses: actions/checkout@v2
+  
+      - name: Directory
+        run: |
+          pwd
+          ls
+
+  Run-scripts-with-vars:
+    runs-on: windows-latest
+    steps:  
+      - name: run-script
+        run: echo ${env:PATH}
+        shell: powershell
+      - name: Directory
+        run: |
+          pwd
+          ls
