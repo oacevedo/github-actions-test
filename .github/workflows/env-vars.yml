@@ -17,6 +17,7 @@ jobs:
 
   Run-scripts-with-vars:
     runs-on: windows-latest
+    needs: Checkout
     steps:  
       - name: run-script
         run: echo ${env:PATH}
@@ -25,3 +26,6 @@ jobs:
         run: |
           pwd
           ls
+          ./scripts/test.ps1
+          ls
+      
