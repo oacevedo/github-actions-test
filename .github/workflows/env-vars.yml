@@ -17,13 +17,13 @@ jobs:
     runs-on: windows-latest
     needs: Checkout
     steps:  
-      - name: run-script
+      - name: print-var 
         run: echo ${env:PATH}
         shell: powershell
+        
       - name: assign variable
         run: |
           echo "{test}={BAR}" >> $GITHUB_ENV
             
-      - name: Directory
-        run: |
-          .\scripts\test.ps1
+      - name: run test script
+        run: .\scripts\test.ps1
