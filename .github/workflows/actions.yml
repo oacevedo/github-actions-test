@@ -1,8 +1,11 @@
 name: Simple Action
 
 on: 
-  repository_dispatch: 
-    types: [this-is-a-test]
+  #- push
+  - workflow_dispatch
+
+  #- repository_dispatch: 
+  #    types: [this-is-a-test]
   # schedule:
   #   - cron: "* * * * *" # every even minute
 
