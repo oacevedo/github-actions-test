@@ -1,1 +1,1 @@
-echo "[Variable Test: " ($env:test | sed 's/./& /g') " ]"
+Write-Output "[Variable Test: " $env:test " ]"
