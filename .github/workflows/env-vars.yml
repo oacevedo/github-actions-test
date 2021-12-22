@@ -28,9 +28,9 @@ jobs:
         run:  |
           (Get-Host).Version
           if ($env:test -eq 'N'){
-            Write-Output "test=-NoOutput" >> $env:GITHUB_ENV
+            Write-Output "test=-NoWrong" >> $env:GITHUB_ENV
           } else {
-            Write-Output "test=-YesOutput" >> $env:GITHUB_ENV
+            Write-Output "test=-YesValid" >> $env:GITHUB_ENV
           } 
       - name: run test script
         run: .\scripts\test.ps1
