@@ -7,16 +7,17 @@ env:
   test: ${{ secrets.TEST }}
 
 jobs:
-  Checkout:
-    runs-on: windows-latest
-    steps:  
-      - name: checkout
-        uses: actions/checkout@v2
-
+  #Checkout:
+    # runs-on: windows-latest
+    # steps:  
+     
   Run-scripts-with-vars:
     runs-on: windows-latest
-    needs: Checkout
-    steps:  
+    #needs: Checkout
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+  
       - name: print-var 
         run: echo ${env:PATH}
         shell: powershell
