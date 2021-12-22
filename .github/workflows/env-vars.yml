@@ -3,6 +3,9 @@ name: Testing env vars
 on: 
   - push
 
+env:
+  test: ${{ secrets.TEST }}
+
 jobs:
   Checkout:
     runs-on: windows-latest
@@ -22,10 +25,14 @@ jobs:
       - name: run-script
         run: echo ${env:PATH}
         shell: powershell
+      - name: assign variable
+        run: |
+          (Get-Host).Version
+          $env:test = $(env:test == 'N') ? "-NoOutput": "YesOutput"  
       - name: Directory
         run: |
           pwd
           ls
-          ./scripts/test.ps1
+          .\scripts\test.ps1
           ls
       

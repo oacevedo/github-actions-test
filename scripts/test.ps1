@@ -1,1 +1,1 @@
-Write-Output $env:myvar
+Write-Output $env:test
