@@ -27,8 +27,9 @@ jobs:
         shell: powershell
       - name: assign variable
         run: |
-          (Get-Host).Version
-          [Environment]::SetEnvironmentVariable("test", $env:Path,  $( ${{ env.test }} == 'N') ? "-NoOutput": "YesOutput")
+          echo "::set-env name=test::BAR"
+         # (Get-Host).Version
+         # [Environment]::SetEnvironmentVariable("test", $env:Path,  $( ${{ env.test }} == 'N') ? "-NoOutput": "YesOutput")
             
       - name: Directory
         run: |
