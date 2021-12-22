@@ -23,6 +23,7 @@ jobs:
         shell: powershell
 
       - name: assign variable
+        shell: bash
         run: |
           echo "testValue=BAR" >> $GITHUB_ENV
             
