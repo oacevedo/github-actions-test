@@ -13,7 +13,7 @@ jobs:
     # steps:  
      
   Run-scripts-with-vars:
-    runs-on: [${{qa}}]
+    runs-on: [self-hosted, qa]
     #needs: Checkout
     steps:
       - name: checkout
@@ -24,9 +24,9 @@ jobs:
         shell: powershell
 
       - name: assign variable
-        shell: bash
+        shell: powershell
         run: |
-          echo "test=BAR" >> $GITHUB_ENV
+          Write-Output "test=BAR" >> $GITHUB_ENV
             
       - name: run test script
         run: .\scripts\test.ps1
