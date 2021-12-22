@@ -28,7 +28,7 @@ jobs:
       - name: assign variable
         run: |
           (Get-Host).Version
-          $env:test = $(env:test == 'N') ? "-NoOutput": "YesOutput"  
+          ${{ env.test }} = $( ${{ env.test }} == 'N') ? "-NoOutput": "YesOutput"  
       - name: Directory
         run: |
           pwd
