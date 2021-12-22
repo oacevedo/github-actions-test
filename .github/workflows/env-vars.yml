@@ -22,10 +22,10 @@ jobs:
         run: echo ${env:PATH}
         shell: powershell
 
-      # - name: assign variable
-      #   shell: bash
-      #   run: |
-      #     echo "test=BAR" >> $GITHUB_ENV
+      - name: assign variable
+        shell: bash
+        run: |
+          echo "test=BAR" >> $GITHUB_ENV
             
       - name: run test script
         run: .\scripts\test.ps1
