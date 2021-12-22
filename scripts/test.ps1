@@ -1,1 +1,1 @@
-Write-Output "[Variable Test: " $env:testValue " ]"
+Write-Output "[Variable Test: " $env:test " ]"

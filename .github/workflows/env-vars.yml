@@ -5,7 +5,7 @@ on:
 
 env:
   test: ${{ secrets.TEST }}
-  testValue: "testing"
+  #testValue: "testing"
 jobs:
   #Checkout:
     # runs-on: windows-latest
@@ -25,12 +25,12 @@ jobs:
       - name: assign variable
         shell: bash
         run: |
-          echo "testValue=BAR" >> $GITHUB_ENV
+          echo "test=BAR" >> $GITHUB_ENV
             
       - name: run test script
         run: .\scripts\test.ps1
       
       - name: check variable
-        run: Write-Host Found it ${{ env.testValue }}
+        run: Write-Host Found it ${{ env.test }}
         if: ${{ env.test == 'N' }}
         
