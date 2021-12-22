@@ -28,4 +28,8 @@ jobs:
             
       - name: run test script
         run: .\scripts\test.ps1
+      
+      - name: run test script
+        run: Write-Host Hello World
+        if: ${{ env.test == 'BAR' }}
         
