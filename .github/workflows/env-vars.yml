@@ -15,7 +15,7 @@ jobs:
 
   Run-scripts-with-vars:
     runs-on: windows-latest
-   # needs: Checkout
+    needs: Checkout
     steps:  
       - name: run-script
         run: echo ${env:PATH}
