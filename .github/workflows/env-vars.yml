@@ -32,5 +32,5 @@ jobs:
       
       - name: check variable
         run: Write-Host Found it ${{ env.test }}
-        if: ${{ env.test == 'N' }}
+        if: ${{ env.test == 'BAR' }}
         
