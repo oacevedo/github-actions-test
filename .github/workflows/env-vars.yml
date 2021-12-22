@@ -25,8 +25,9 @@ jobs:
 
       - name: assign variable
         shell: powershell
-        run: |
-          Write-Output "test=BAR" >> $GITHUB_ENV
+        run:  |
+          (Get-Host).Version
+          Write-Output "test=BAR" >> $env:GITHUB_ENV
             
       - name: run test script
         run: .\scripts\test.ps1
