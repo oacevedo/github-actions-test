@@ -7,16 +7,11 @@ env:
   test: ${{ secrets.TEST }}
 
 jobs:
-  # Checkout:
-  #   runs-on: windows-latest
-  #   steps:  
-  #     - name: checkout
-  #       uses: actions/checkout@v2
-  
-  #     - name: Directory
-  #       run: |
-  #         pwd
-  #         ls
+  Checkout:
+    runs-on: windows-latest
+    steps:  
+      - name: checkout
+        uses: actions/checkout@v2
 
   Run-scripts-with-vars:
     runs-on: windows-latest
@@ -31,8 +26,4 @@ jobs:
             
       - name: Directory
         run: |
-          pwd
-          ls
           .\scripts\test.ps1
-          ls
-      
