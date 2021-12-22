@@ -7,16 +7,16 @@ env:
   test: ${{ secrets.TEST }}
 
 jobs:
-  Checkout:
-    runs-on: windows-latest
-    steps:  
-      - name: checkout
-        uses: actions/checkout@v2
+  # Checkout:
+  #   runs-on: windows-latest
+  #   steps:  
+  #     - name: checkout
+  #       uses: actions/checkout@v2
   
-      - name: Directory
-        run: |
-          pwd
-          ls
+  #     - name: Directory
+  #       run: |
+  #         pwd
+  #         ls
 
   Run-scripts-with-vars:
     runs-on: windows-latest
@@ -28,7 +28,8 @@ jobs:
       - name: assign variable
         run: |
           (Get-Host).Version
-          ${{ env.test }} = $( ${{ env.test }} == 'N') ? "-NoOutput": "YesOutput"  
+          [Environment]::SetEnvironmentVariable("test", $env:Path,  $( ${{ env.test }} == 'N') ? "-NoOutput": "YesOutput")
+            
       - name: Directory
         run: |
           pwd
