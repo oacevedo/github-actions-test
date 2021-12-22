@@ -24,12 +24,12 @@ jobs:
 
       - name: assign variable
         run: |
-          echo "test=BAR" >> $GITHUB_ENV
+          echo "testValue=BAR" >> $GITHUB_ENV
             
       - name: run test script
         run: .\scripts\test.ps1
       
       - name: check variable
-        run: Write-Host Found it
+        run: Write-Host Found it ${{ env.testValue }}
         if: ${{ env.test == 'N' }}
         
