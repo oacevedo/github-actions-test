@@ -5,7 +5,7 @@ on:
 
 env:
   test: ${{ secrets.TEST }}
-
+  testValue: "testing"
 jobs:
   #Checkout:
     # runs-on: windows-latest
