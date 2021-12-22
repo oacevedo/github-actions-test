@@ -27,9 +27,7 @@ jobs:
         shell: powershell
       - name: assign variable
         run: |
-          echo "::set-env name=test::BAR"
-         # (Get-Host).Version
-         # [Environment]::SetEnvironmentVariable("test", $env:Path,  $( ${{ env.test }} == 'N') ? "-NoOutput": "YesOutput")
+          echo "{test}={BAR}" >> $GITHUB_ENV
             
       - name: Directory
         run: |
