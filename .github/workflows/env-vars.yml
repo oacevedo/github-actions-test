@@ -24,7 +24,7 @@ jobs:
 
       - name: assign variable
         run: |
-          echo "{test}={BAR}" >> $GITHUB_ENV
+          echo "test=BAR" >> $GITHUB_ENV
             
       - name: run test script
         run: .\scripts\test.ps1
