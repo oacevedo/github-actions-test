@@ -27,7 +27,7 @@ jobs:
         shell: powershell
         run:  |
           (Get-Host).Version
-          if ($env:test == 'N'){
+          if ($env:test -eq 'N'){
             Write-Output "test=-NoOutput" >> $env:GITHUB_ENV
           } else {
             Write-Output "test=-YesOutput" >> $env:GITHUB_ENV
