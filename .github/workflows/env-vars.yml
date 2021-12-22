@@ -27,12 +27,15 @@ jobs:
         shell: powershell
         run:  |
           (Get-Host).Version
-          Write-Output "test=BAR" >> $env:GITHUB_ENV
-            
+          if ($env:test == 'N'){
+            Write-Output "test=-NoOutput" >> $env:GITHUB_ENV
+          } else {
+            Write-Output "test=-YesOutput" >> $env:GITHUB_ENV
+          } 
       - name: run test script
         run: .\scripts\test.ps1
       
       - name: check variable
         run: Write-Host Found it ${{ env.test }}
-        if: ${{ env.test == 'BAR' }}
+        #if: ${{ env.test == 'BAR' }}
         
