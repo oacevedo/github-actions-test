@@ -6,13 +6,14 @@ on:
 env:
   test: ${{ secrets.TEST }}
   #testValue: "testing"
+  runners: "qa"
 jobs:
   #Checkout:
     # runs-on: windows-latest
     # steps:  
      
   Run-scripts-with-vars:
-    runs-on: windows-latest
+    runs-on: [${{qa}}]
     #needs: Checkout
     steps:
       - name: checkout
